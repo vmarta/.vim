@@ -52,9 +52,14 @@ set nowrap
 
 set expandtab  "work standard
 set tabstop=4  "a tab is shown *like* 4 spaces
+set softtabstop=4
 set shiftwidth=4  "each step of indenting
 au FileType coffee setl tabstop=2
+au FileType coffee setl softtabstop=2
 au FileType coffee setl shiftwidth=2
+au FileType ruby setl tabstop=2
+au FileType ruby setl softtabstop=2
+au FileType ruby setl shiftwidth=2
 
 
 set autoread  "if a file changed somewhere else, vim will load this change
