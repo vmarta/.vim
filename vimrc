@@ -66,6 +66,8 @@ set autoread  "if a file changed somewhere else, vim will load this change
 
 set autoindent
 set smartindent
+"When using p, adjust indent to the current line
+nmap p ]p
 
 set laststatus=2  "status line always appears
 set showcmd      "show partial command that you're typing
