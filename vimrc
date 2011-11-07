@@ -111,6 +111,11 @@ nnoremap <Leader>b :ls<CR>:buffer<Space>
 
 
 "----------------------------------
+"Session plugin options
+let g:session_autoload = "no"
+let g:session_autosave = "yes"
+
+"----------------------------------
 "HTML options
 " ignore <,> as matching pair
 au FileType html let b:delimitMate_matchpairs = "{:},(:),[:]"
