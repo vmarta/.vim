@@ -111,6 +111,17 @@ nnoremap <Leader>b :ls<CR>:buffer<Space>
 
 
 "----------------------------------
+"HTML options
+" ignore <,> as matching pair
+au FileType html let b:delimitMate_matchpairs = "{:},(:),[:]"
+" do not load the indent file (from html5 bundle)
+au FileType html let b:did_indent = 1
+
+"----------------------------------
+"CSS (and SCSS) options
+au FileType css,scss set iskeyword+=-
+
+"----------------------------------
 "jQuery syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
