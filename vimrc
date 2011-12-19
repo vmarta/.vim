@@ -133,6 +133,10 @@ au FileType css,scss set iskeyword+=-
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 "----------------------------------
+"Konf files
+au BufNewFile,BufRead *.konf set filetype=javascript
+
+"----------------------------------
 "AutoComplPop plugin 
 
 "no automatic completion of keywords 
