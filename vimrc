@@ -1,5 +1,5 @@
-call pathogen#runtime_append_all_bundles() 
-call pathogen#helptags()
+runtime bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
 
 filetype indent plugin on
 set hidden  "allows unsaved buffer to stay in background/hidden
