@@ -43,3 +43,6 @@
 [submodule "bundle/pathogen"]
 	path = bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "bundle/html5"]
+	path = bundle/html5
+	url = https://github.com/othree/html5-syntax.vim.git
