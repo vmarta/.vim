@@ -129,3 +129,7 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 "Konf files
 au BufNewFile,BufRead *.konf set filetype=javascript
 
+"----------------------------------
+"Fugitive plugin
+"auto-clean fugitive buffers
+au BufReadPost fugitive://* set bufhidden=delete
