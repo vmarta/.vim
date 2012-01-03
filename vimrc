@@ -133,3 +133,18 @@ au BufNewFile,BufRead *.konf set filetype=javascript
 "Fugitive plugin
 "auto-clean fugitive buffers
 au BufReadPost fugitive://* set bufhidden=delete
+
+"----------------------------------
+"TComment plugin
+"set a different shortcut to avoid conflict with my mappings
+let g:tcommentMapLeader2 = "<Leader>/"
+
+"----------------------------------
+"SuperTab plugin
+"smart completion based on the text preceding the cursor
+let g:SuperTabDefaultCompletionType = "context"
+
+"----------------------------------
+"CtrlP plugin
+"ignore these files/directories
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*.swp,*.swo
