@@ -147,4 +147,4 @@ let g:SuperTabDefaultCompletionType = "context"
 "----------------------------------
 "CtrlP plugin
 "ignore these files/directories
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*.swp,*.swo
+set wildignore+=*.so,*.swp,*.swo
