@@ -1,5 +1,5 @@
-call pathogen#runtime_append_all_bundles() 
-call pathogen#helptags()
+runtime bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
 
 filetype indent plugin on
 set hidden  "allows unsaved buffer to stay in background/hidden
@@ -118,13 +118,6 @@ let g:session_autoload = "no"
 let g:session_autosave = "yes"
 
 "----------------------------------
-"HTML options
-" ignore <,> as matching pair
-au FileType html let b:delimitMate_matchpairs = "{:},(:),[:]"
-" do not load the indent file (from html5 bundle)
-au FileType html let b:did_indent = 1
-
-"----------------------------------
 "CSS (and SCSS) options
 au FileType css,scss set iskeyword+=-
 
@@ -137,43 +130,21 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 au BufNewFile,BufRead *.konf set filetype=javascript
 
 "----------------------------------
-"AutoComplPop plugin 
+"Fugitive plugin
+"auto-clean fugitive buffers
+au BufReadPost fugitive://* set bufhidden=delete
 
-"no automatic completion of keywords 
-"(manually enter <C-n> whenever you need)
-let g:acp_behaviorKeywordLength = -1
+"----------------------------------
+"TComment plugin
+"set a different shortcut to avoid conflict with my mappings
+let g:tcommentMapLeader2 = "<Leader>/"
 
-"configuration for JavaScript files
-let jsbehav = {'javascript': []}
+"----------------------------------
+"SuperTab plugin
+"smart completion based on the text preceding the cursor
+let g:SuperTabDefaultCompletionType = "context"
 
-call add(jsbehav.javascript, {
-          \   'command'      : "\<C-x>\<C-u>",
-          \   'completefunc' : 'acp#completeSnipmate',
-          \   'meets'        : 'acp#meetsForSnipmate',
-          \   'onPopupClose' : 'acp#onPopupCloseSnipmate',
-          \   'repeat'       : 0,
-\})
-
-let g:acp_behaviorKeywordCommand = "\<C-n>"
-call add(jsbehav.javascript, {
-          \   'command' : g:acp_behaviorKeywordCommand,
-          \   'meets'   : 'acp#meetsForKeyword',
-          \   'repeat'  : 0,
-\})
-
-call add(jsbehav.javascript, {
-          \   'command' : "\<C-x>\<C-f>",
-          \   'meets'   : 'acp#meetsForFile',
-          \   'repeat'  : 1,
-\})
-
-"reusing the python omni's trigger
-call add(jsbehav.javascript, {
-	\	'command': "\<C-x>\<C-o>",
-	\	'meets'  : 'acp#meetsForPythonOmni', 
-	\	'repeat' : 0,
-\})
-
-"now add the new configuration
-let g:acp_behavior = {}
-call extend(g:acp_behavior, jsbehav, 'keep')
+"----------------------------------
+"CtrlP plugin
+"ignore these files/directories
+set wildignore+=*.so,*.swp,*.swo
