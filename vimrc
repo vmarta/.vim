@@ -11,7 +11,7 @@ let g:solarized_menu=0  "turn off the menu that appears on the top menu bar
 colorscheme solarized
 
 if has('gui_running')
-  set guifont=Consolas:h14
+  set guifont=Source\ Code\ Pro:h13
   set guioptions-=T  "hide toolbar
   set number  "shows line numbers
 endif
@@ -126,8 +126,9 @@ au FileType css,scss set iskeyword+=-
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 "----------------------------------
-"Konf files
+"Konf, tmpl files
 au BufNewFile,BufRead *.konf set filetype=javascript
+au BufNewFile,BufRead *.tmpl set filetype=javascript
 
 "----------------------------------
 "Fugitive plugin
