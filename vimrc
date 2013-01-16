@@ -40,7 +40,7 @@ nnoremap <Leader>s :set hlsearch!<CR>
 noremap / /\v
 noremap ? ?\v
 "Find/search within the specified files
-nnoremap <Leader>f :grep -Eir 
+nnoremap <Leader>f :Ggrep -i 
 "Search and replace within the current line
 "nnoremap <Leader>rl :s/\v/gc<Left><Left><Left>
 "Search and replace within the current file
