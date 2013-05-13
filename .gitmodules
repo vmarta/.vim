@@ -61,3 +61,6 @@
 [submodule "bundle/slime"]
 	path = bundle/slime
 	url = git://github.com/jpalardy/vim-slime.git
+[submodule "bundle/ternjs"]
+	path = bundle/ternjs
+	url = git://github.com/marijnh/tern_for_vim.git
