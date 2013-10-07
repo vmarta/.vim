@@ -122,6 +122,10 @@ let g:session_autosave = "yes"
 au FileType css,scss set iskeyword+=-
 
 "----------------------------------
+"JavaScript options
+au FileType javascript set iskeyword+=-
+
+"----------------------------------
 "jQuery syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
