@@ -10,16 +10,18 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'cakebaker/scss-syntax.vim'
+" Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'jpalardy/vim-slime'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
+Bundle 'marijnh/tern_for_vim'
 Bundle 'matchit.zip'
 Bundle 'othree/html5-syntax.vim'
 " Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
@@ -47,7 +49,7 @@ let g:solarized_menu=0  "turn off the menu that appears on the top menu bar
 colorscheme solarized
 
 if has('gui_running')
-  set guifont=Source\ Code\ Pro:h13
+  set guifont=Source\ Code\ Pro:h15
   set guioptions-=T  "hide toolbar
   set number  "shows line numbers
 endif
@@ -57,10 +59,10 @@ map 0 ^
 " rather than act as yy (the default)
 map Y y$
 " Maps for easier scrolling up/down
-if has('gui_running')
-	map <D-d> <C-d>
-	map <D-u> <C-u>
-endif
+" if has('gui_running')
+" 	map <D-d> <C-d>
+" 	map <D-u> <C-u>
+" endif
 
 set ignorecase "search is case-insensitive
 set smartcase  "search becomes case-sensitive when using capital letters
@@ -162,8 +164,8 @@ au FileType css,scss set iskeyword+=-
 au FileType javascript set iskeyword+=-
 
 "----------------------------------
-"jQuery syntax
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+"JavaScript libraries syntax
+let g:used_javascript_libs = 'jquery'
 
 "----------------------------------
 "Konf, tmpl files
