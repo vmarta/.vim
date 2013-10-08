@@ -191,3 +191,17 @@ let g:SuperTabDefaultCompletionType = "context"
 "CtrlP plugin
 "ignore these files/directories
 set wildignore+=*.so,*.swp,*.swo
+
+"----------------------------------
+"YouCompleteMe plugin
+let g:ycm_filetype_blacklist = {'notes': 1, 'markdown': 1, 'text': 1, 'fugitiveblame': 1}
+let g:ycm_min_num_of_chars_for_completion = 3
+
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+
+" let g:ycm_cache_omnifunc = 0
+" let g:ycm_add_preview_to_completeopt = 0
+" set completeopt-=preview
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
