@@ -1,3 +1,6 @@
 .netrwhist
 
 sessions/*
+
+bundle/**
+~bundle/vundle

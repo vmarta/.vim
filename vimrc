@@ -1,7 +1,43 @@
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
+filetype off  " It'll be turned on later
 
-filetype indent plugin on
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle (required)
+Bundle 'gmarik/vundle'
+
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Raimondi/delimitMate'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'jpalardy/vim-slime'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'matchit.zip'
+Bundle 'othree/html5-syntax.vim'
+" Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'walm/jshint.vim'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-session'
+
+filetype plugin indent on
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+
+
+
 set hidden  "allows unsaved buffer to stay in background/hidden
 let mapleader = "\<Space>"
 
