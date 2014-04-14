@@ -19,6 +19,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'matchit.zip'
 Bundle 'othree/html5-syntax.vim'
 " Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'rking/ag.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -74,11 +75,16 @@ nnoremap # #:set hlsearch<CR>N
 "Toggle the search highlight
 nnoremap <Leader>s :set hlsearch!<CR>
 
+" Grep word under cursor
+nnoremap K :Ag! -w <C-R><C-W><CR>
+" Search across multiple files
+nnoremap <Leader>f :Ag! -S 
+
 "More perl-like
 noremap / /\v
 noremap ? ?\v
 "Find/search within the specified files
-nnoremap <Leader>f :Ggrep -Ei 
+" nnoremap <Leader>f :Ggrep -Ei 
 "Search and replace within the current line
 "nnoremap <Leader>rl :s/\v/gc<Left><Left><Left>
 "Search and replace within the current file
@@ -191,6 +197,13 @@ let g:SuperTabDefaultCompletionType = "context"
 "CtrlP plugin
 "ignore these files/directories
 set wildignore+=*.so,*.swp,*.swo
+
+if executable('ag')
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    " ag is fast enough that CtrlP doesn't need to cache
+    let g:ctrlp_use_caching = 0
+endif
 
 "----------------------------------
 "YouCompleteMe plugin
