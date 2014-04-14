@@ -13,6 +13,7 @@ Bundle 'altercation/vim-colors-solarized'
 " Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'jpalardy/vim-slime'
+Bundle 'justinmk/vim-sneak'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 " Bundle 'marijnh/tern_for_vim'
@@ -218,4 +219,16 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 " let g:ycm_add_preview_to_completeopt = 0
 " set completeopt-=preview
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+"----------------------------------
+"Sneak plugin
+let g:sneak#streak = 1
+let g:sneak#use_ic_scs = 1
+" map f to use Sneak
+nmap f <Plug>Sneak_s
+nmap F <Plug>Sneak_S
+xmap f <Plug>Sneak_s
+xmap F <Plug>Sneak_S
+omap f <Plug>Sneak_s
+omap F <Plug>Sneak_S
 
