@@ -12,6 +12,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'altercation/vim-colors-solarized'
 " Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'jimmyhchan/dustjs.vim'
 Bundle 'jpalardy/vim-slime'
 Bundle 'justinmk/vim-sneak'
 Bundle 'kchmck/vim-coffee-script'
@@ -178,7 +179,7 @@ let g:used_javascript_libs = 'jquery'
 "Konf, tmpl files
 au BufNewFile,BufRead *.konf set filetype=javascript
 au BufNewFile,BufRead *.include set filetype=javascript
-au BufNewFile,BufRead *.tmpl set filetype=javascript
+au BufNewFile,BufRead *.tmpl set filetype=dustjs
 
 "----------------------------------
 "Fugitive plugin
