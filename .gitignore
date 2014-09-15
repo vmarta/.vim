@@ -3,4 +3,5 @@
 sessions/*
 
 bundle/**
-~bundle/vundle
+!bundle/vundle/
+!bundle/vundle/**
