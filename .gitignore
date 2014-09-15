@@ -1,3 +1,7 @@
+.*.swf
+.*.swo
+.*.swp
+
 .netrwhist
 
 sessions/*
