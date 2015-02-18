@@ -49,7 +49,7 @@ let mapleader = "\<Space>"
 
 syntax enable
 set background=dark
-let g:solarized_menu=0  "turn off the menu that appears on the top menu bar
+" let g:solarized_menu=0  "turn off the menu that appears on the top menu bar
 colorscheme solarized
 
 if has('gui_running')
