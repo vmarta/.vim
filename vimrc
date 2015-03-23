@@ -27,6 +27,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'walm/jshint.vim'
@@ -97,16 +98,16 @@ set cursorline  "highlights current line
 set scrolloff=5  "have a min of 5 lines above/below the cursor
 set nowrap
 
-set expandtab  "work standard
-set tabstop=4  "a tab is shown *like* 4 spaces
-set softtabstop=4
-set shiftwidth=4  "each step of indenting
-au FileType coffee setl tabstop=2
-au FileType coffee setl softtabstop=2
-au FileType coffee setl shiftwidth=2
-au FileType ruby setl tabstop=2
-au FileType ruby setl softtabstop=2
-au FileType ruby setl shiftwidth=2
+" set expandtab  "work standard
+" set tabstop=4  "a tab is shown *like* 4 spaces
+" set softtabstop=4
+" set shiftwidth=4  "each step of indenting
+" au FileType coffee setl tabstop=2
+" au FileType coffee setl softtabstop=2
+" au FileType coffee setl shiftwidth=2
+" au FileType ruby setl tabstop=2
+" au FileType ruby setl softtabstop=2
+" au FileType ruby setl shiftwidth=2
 
 
 set autoread  "if a file changed somewhere else, vim will load this change
