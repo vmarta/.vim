@@ -27,6 +27,7 @@ Bundle 'rking/ag.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-projectionist'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
@@ -237,3 +238,26 @@ nmap F <Plug>Sneak_S
 " omap f <Plug>Sneak_s
 " omap F <Plug>Sneak_S
 
+"----------------------------------
+"Projectionist plugin
+let g:projectionist_heuristics = {
+    \ "adaptation/&assets/js/ui/": {
+    \     "adaptation/views/*.js": {
+    \          "type": "view"
+    \     },
+    \     "adaptation/views/parsers/*.js": {
+    \         "type": "parser"
+    \     },
+    \     "adaptation/views/decorators/*.js": {
+    \         "type": "decorator"
+    \     },
+    \     "assets/js/ui/view-scripts/*.js": {
+    \         "type": "ui"
+    \     },
+    \     "adaptation/templates/*.dust": {
+    \         "type": "template"
+    \     },
+    \     "adaptation/templates/partials/*.dust": {
+    \         "type": "partial"
+    \     }
+    \ }}
