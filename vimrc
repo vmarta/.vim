@@ -103,6 +103,9 @@ set nowrap
 
 
 set autoread  "if a file changed somewhere else, vim will load this change
+if !has('gui_running')
+  au CursorHold,BufEnter * checktime
+endif
 
 set autoindent
 set smartindent
