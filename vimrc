@@ -61,6 +61,9 @@ if has('gui_running')
   set guioptions-=T  "hide toolbar
   set number  "shows line numbers
 endif
+if has('nvim')
+  set number  "shows line numbers
+endif
 
 map 0 ^
 " Map Y to act like D and C, i.e. to yank until EOL, 
@@ -261,3 +264,7 @@ let g:projectionist_heuristics = {
     \         "type": "partial"
     \     }
     \ }}
+
+"----------------------------------
+"Neovim
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
