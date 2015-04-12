@@ -2,7 +2,7 @@ call plug#begin()
 
 Plug 'Lokaltog/vim-powerline'
 Plug 'Raimondi/delimitMate'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
 Plug 'altercation/vim-colors-solarized'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jelera/vim-javascript-syntax'
@@ -28,6 +28,13 @@ Plug 'tpope/vim-vinegar'
 Plug 'walm/jshint.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
+
+" https://github.com/junegunn/vim-plug/wiki/faq#loading-plugins-manually
+augroup load_ycm
+  autocmd!
+  autocmd InsertEnter * call plug#load('YouCompleteMe')
+                     \| call youcompleteme#Enable() | autocmd! load_ycm
+augroup END
 
 call plug#end()
 
