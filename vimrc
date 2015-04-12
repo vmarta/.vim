@@ -1,50 +1,36 @@
-filetype off  " It'll be turned on later
+call plug#begin()
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+Plug 'Lokaltog/vim-powerline'
+Plug 'Raimondi/delimitMate'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'altercation/vim-colors-solarized'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'jimmyhchan/dustjs.vim'
+Plug 'jpalardy/vim-slime'
+Plug 'justinmk/vim-sneak'
+Plug 'kchmck/vim-coffee-script'
+Plug 'kien/ctrlp.vim'
+Plug 'marijnh/tern_for_vim'
+Plug 'matchit.zip'
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5-syntax.vim'
+Plug 'rking/ag.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'walm/jshint.vim'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 
-" let Vundle manage Vundle (required)
-Bundle 'gmarik/vundle'
+call plug#end()
 
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Raimondi/delimitMate'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'altercation/vim-colors-solarized'
-" Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'jimmyhchan/dustjs.vim'
-Bundle 'jpalardy/vim-slime'
-Bundle 'justinmk/vim-sneak'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'matchit.zip'
-Bundle 'mattn/emmet-vim'
-Bundle 'othree/html5-syntax.vim'
-" Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'rking/ag.vim'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-projectionist'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-sleuth'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-vinegar'
-Bundle 'walm/jshint.vim'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-session'
-
-filetype plugin indent on
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
 
 
 

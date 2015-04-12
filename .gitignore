@@ -6,6 +6,4 @@
 
 sessions/*
 
-bundle/**
-!bundle/vundle/
-!bundle/vundle/**
+plugged/**
