@@ -44,7 +44,7 @@ call plug#end()
 set hidden  "allows unsaved buffer to stay in background/hidden
 let mapleader = "\<Space>"
 
-syntax enable
+au VimEnter * syntax enable
 set background=light
 " let g:solarized_menu=0  "turn off the menu that appears on the top menu bar
 colorscheme solarized
