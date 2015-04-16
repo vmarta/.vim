@@ -1,6 +1,5 @@
 call plug#begin()
 
-Plug 'Lokaltog/vim-powerline'
 Plug 'Raimondi/delimitMate'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
 Plug 'altercation/vim-colors-solarized'
@@ -120,13 +119,15 @@ set smartindent
 " nmap p ]p
 
 set laststatus=2  "status line always appears
+
+set statusline=%f  "shows file path
+set statusline+=\ %m  "whether file has been modified
+set statusline+=%=  "from now on, right align the text
+set statusline+=[#%{fugitive#head()}]  "current branch
+set statusline+=%y  "file type (e.g. javascript, dustjs)
+
 set showcmd      "show partial command that you're typing
 set wildmenu     "better command line completion
-if has('gui_running')
-	set noruler  "a scroll bar is good enough
-else
-	set ruler    "show info re: the position of cursor
-endif
 
 set visualbell
 
