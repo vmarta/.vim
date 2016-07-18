@@ -7,6 +7,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'jimmyhchan/dustjs.vim'
 Plug 'jpalardy/vim-slime'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'justinmk/vim-sneak'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
@@ -207,6 +208,8 @@ let g:SuperTabDefaultCompletionType = "context"
 "----------------------------------
 "CtrlP plugin
 "ignore these files/directories
+"TODO: replace CtrlP with FZF (and port the following options)
+"nnoremap <c-p> :FZF<cr>
 set wildignore+=*.so,*.swp,*.swo
 
 if executable('ag')
