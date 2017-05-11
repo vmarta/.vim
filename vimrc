@@ -70,6 +70,11 @@ map Y y$
 " 	map <D-u> <C-u>
 " endif
 
+" copy and paste
+vmap <Leader>c "+y
+nmap <Leader>p "+p
+vmap <Leader>p c<ESC>"+p
+
 set ignorecase "search is case-insensitive
 set smartcase  "search becomes case-sensitive when using capital letters
 set incsearch  "search as you type (real time)
