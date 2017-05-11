@@ -141,7 +141,7 @@ set visualbell
 
 
 "quicker escaping from insert to normal mode
-inoremap jj <Esc>
+inoremap jk <Esc>
 
 "convenience mappings for moving to other windows
 noremap <Leader>w <C-w>w
