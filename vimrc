@@ -2,9 +2,11 @@ call plug#begin()
 
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer', 'on': [] }
 Plug 'aliva/vim-fish'
 Plug 'altercation/vim-colors-solarized'
+Plug 'carlitux/deoplete-ternjs'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jaawerth/nrun.vim'
 Plug 'jimmyhchan/dustjs.vim'
@@ -37,11 +39,11 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
 " https://github.com/junegunn/vim-plug/wiki/faq#loading-plugins-manually
-augroup load_ycm
-  autocmd!
-  autocmd InsertEnter * call plug#load('YouCompleteMe')
-                     \| call youcompleteme#Enable() | autocmd! load_ycm
-augroup END
+" augroup load_ycm
+"   autocmd!
+"   autocmd InsertEnter * call plug#load('YouCompleteMe')
+"                      \| autocmd! load_ycm
+" augroup END
 
 call plug#end()
 
@@ -235,6 +237,7 @@ endif
 
 "----------------------------------
 "YouCompleteMe plugin
+" TODO: reevaluate these options 
 let g:ycm_filetype_blacklist = {'notes': 1, 'markdown': 1, 'text': 1, 'fugitiveblame': 1}
 let g:ycm_min_num_of_chars_for_completion = 3
 
@@ -243,7 +246,6 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
 " let g:ycm_cache_omnifunc = 0
 " let g:ycm_add_preview_to_completeopt = 0
-" set completeopt-=preview
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "----------------------------------
@@ -325,3 +327,11 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 "Markdown preview
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_github=1
+
+"----------------------------------
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" don't show the preview window
+set completeopt-=preview
