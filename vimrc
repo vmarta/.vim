@@ -6,6 +6,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
 Plug 'aliva/vim-fish'
 Plug 'altercation/vim-colors-solarized'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'jaawerth/nrun.vim'
 Plug 'jimmyhchan/dustjs.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -17,6 +18,7 @@ Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'matchit.zip'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
+Plug 'neomake/neomake'
 Plug 'othree/html5-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
@@ -288,6 +290,14 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "vim-jsx
 "Allows highlighting of jsx code in regular .js files
 let g:jsx_ext_required = 0
+
+"----------------------------------
+"NeoMake + nrun.vim
+"a workaround for filetype 'javascript.jsx' (see https://github.com/neomake/neomake/issues/492)
+" let g:neomake_jsx_enabled_makers = ['eslint']
+"use local eslint if exists
+au BufEnter *.js,*.jsx let b:neomake_javascript_eslint_exe = nrun#Which('eslint')
+autocmd! BufWinEnter,BufWritePost * Neomake
 
 "----------------------------------
 "Flagship
