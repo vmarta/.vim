@@ -1,5 +1,6 @@
 call plug#begin()
 
+Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
 Plug 'altercation/vim-colors-solarized'
@@ -8,6 +9,7 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'jimmyhchan/dustjs.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
@@ -278,3 +280,25 @@ let g:projectionist_heuristics = {
 "----------------------------------
 "Neovim
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+"----------------------------------
+"Goyo
+function! s:goyo_enter()
+  set wrap
+  set linebreak
+  set list
+endfunction
+
+function! s:goyo_leave()
+  set nowrap
+  set nolinebreak
+  set nolist
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+"----------------------------------
+"Markdown preview
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_github=1
