@@ -3,6 +3,7 @@ call plug#begin()
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neco-syntax'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer', 'on': [] }
 Plug 'aliva/vim-fish'
 Plug 'altercation/vim-colors-solarized'
