@@ -21,6 +21,7 @@ Plug 'othree/html5-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
 Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-projectionist'
@@ -131,11 +132,11 @@ set smartindent
 " nmap p ]p
 
 set laststatus=2  "status line always appears
+set showtabline=2 "tabline always appears
 
 set statusline=%f  "shows file path
 set statusline+=\ %m  "whether file has been modified
 set statusline+=%=  "from now on, right align the text
-set statusline+=[#%{fugitive#head()}]  "current branch
 set statusline+=%y  "file type (e.g. javascript, dustjs)
 
 set showcmd      "show partial command that you're typing
@@ -288,6 +289,12 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "Allows highlighting of jsx code in regular .js files
 let g:jsx_ext_required = 0
 
+"----------------------------------
+"Flagship
+let g:tabprefix = ""
+let g:tablabel = "%N%{flagship#tabmodified()} %<%f%q"
+
+"----------------------------------
 "Goyo
 function! s:goyo_enter()
   set wrap
