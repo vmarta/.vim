@@ -3,6 +3,7 @@ call plug#begin()
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
+Plug 'aliva/vim-fish'
 Plug 'altercation/vim-colors-solarized'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jimmyhchan/dustjs.vim'
