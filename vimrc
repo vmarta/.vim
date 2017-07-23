@@ -5,7 +5,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
 Plug 'altercation/vim-colors-solarized'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'jimmyhchan/dustjs.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -16,7 +15,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'matchit.zip'
 Plug 'mattn/emmet-vim'
+Plug 'mxw/vim-jsx'
 Plug 'othree/html5-syntax.vim'
+Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
@@ -282,6 +283,10 @@ let g:projectionist_heuristics = {
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 "----------------------------------
+"vim-jsx
+"Allows highlighting of jsx code in regular .js files
+let g:jsx_ext_required = 0
+
 "Goyo
 function! s:goyo_enter()
   set wrap
