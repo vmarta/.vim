@@ -21,7 +21,7 @@ Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'matchit.zip'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
-Plug 'neomake/neomake'
+Plug 'neomake/neomake', { 'do': 'npm install -g eslint_d' }
 Plug 'othree/html5-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
@@ -297,10 +297,9 @@ let g:jsx_ext_required = 0
 
 "----------------------------------
 "NeoMake + nrun.vim
-"a workaround for filetype 'javascript.jsx' (see https://github.com/neomake/neomake/issues/492)
-" let g:neomake_jsx_enabled_makers = ['eslint']
 "use local eslint if exists
-au BufEnter *.js,*.jsx let b:neomake_javascript_eslint_exe = nrun#Which('eslint')
+au BufEnter *.js,*.jsx let b:neomake_javascript_eslint_exe = 'eslint_d'
+"run linting on all supported files
 autocmd! BufWinEnter,BufWritePost * Neomake
 
 "----------------------------------
