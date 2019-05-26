@@ -2,18 +2,12 @@ call plug#begin()
 
 " NOTE - if you install NPM module, also add it to the list in ~/.nvm/default-packages
 
-" Plug 'Galooshi/vim-import-js', { 'do': 'npm install -g import-js' }
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neco-syntax'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer', 'on': [] }
 Plug 'aliva/vim-fish'
 Plug 'altercation/vim-colors-solarized'
-" Plug 'carlitux/deoplete-ternjs'
 Plug 'csscomb/vim-csscomb'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'jaawerth/nrun.vim'
 Plug 'jimmyhchan/dustjs.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -21,17 +15,14 @@ Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'matchit.zip'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-" Plug 'neomake/neomake', { 'do': 'npm install -g eslint_d' }
 Plug 'othree/html5-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier'
 Plug 'rking/ag.vim'
-" Plug 'sbdchd/neoformat'
 Plug 'sotte/presenting.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-flagship'
@@ -47,13 +38,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'walm/jshint.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-
-" https://github.com/junegunn/vim-plug/wiki/faq#loading-plugins-manually
-" augroup load_ycm
-"   autocmd!
-"   autocmd InsertEnter * call plug#load('YouCompleteMe')
-"                      \| autocmd! load_ycm
-" augroup END
 
 call plug#end()
 
@@ -166,21 +150,6 @@ set wildmenu     "better command line completion
 
 set visualbell
 
-"Customize the default code-folding look
-"http://dhruvasagar.com/2013/03/28/vim-better-foldtext
-" function! NeatFoldText() "{{{2
-"   let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
-"   let lines_count = v:foldend - v:foldstart + 1
-"   let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
-"   let foldchar = matchstr(&fillchars, 'fold:\zs.')
-"   let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
-"   let foldtextend = lines_count_text . repeat(foldchar, 8)
-"   let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
-"   return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
-" endfunction
-" set foldtext=NeatFoldText()
-" }}}2
-
 "quicker escaping from insert to normal mode
 inoremap jk <Esc>
 
@@ -270,19 +239,6 @@ endif
 let g:ctrlp_root_markers = ['.ctrlp']
 
 "----------------------------------
-"YouCompleteMe plugin
-" TODO: reevaluate these options 
-let g:ycm_filetype_blacklist = {'notes': 1, 'markdown': 1, 'text': 1, 'fugitiveblame': 1}
-let g:ycm_min_num_of_chars_for_completion = 3
-
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-
-" let g:ycm_cache_omnifunc = 0
-" let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-"----------------------------------
 "Sneak plugin
 " let g:sneak#streak = 1
 let g:sneak#use_ic_scs = 1
@@ -328,13 +284,6 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let g:jsx_ext_required = 0
 
 "----------------------------------
-"NeoMake + nrun.vim
-" "use local eslint if exists
-" au BufEnter *.js,*.jsx let b:neomake_javascript_eslint_exe = 'eslint_d'
-" "run linting on all supported files
-" autocmd! BufWinEnter,BufWritePost * Neomake
-
-"----------------------------------
 "Flagship
 let g:tabprefix = ""
 let g:tablabel = "%N%{flagship#tabmodified()} %<%f%q"
@@ -360,34 +309,6 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 "Markdown preview
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_github=1
-
-"----------------------------------
-" Deoplete
-" let g:deoplete#enable_at_startup = 1
-"
-" let g:deoplete#ignore_sources = {}
-" let g:deoplete#ignore_sources.markdown = ['buffer', 'around']
-"
-" " deoplete tab-complete
-" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" " don't show the preview window
-" set completeopt-=preview
-
-"----------------------------------
-" vim-import-js
-" Override one of the default mappings
-" nmap <Leader>i :ImportJSWord
-
-"----------------------------------
-" Neoformat
-" let g:neoformat_enabled_javascript = ['prettier']
-" " Run prettier only if it exists in local node_modules
-" " (the global prettier is not installed)
-" let g:neoformat_javascript_prettier = {
-"       \ 'exe': nrun#Which('prettier')
-"       \ }
-"
-" autocmd! BufWritePre *.js,*.jsx Neoformat
 
 "----------------------------------
 " COC intellisense engine 
