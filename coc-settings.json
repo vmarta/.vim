@@ -1,0 +1,7 @@
+{
+	"diagnostic.virtualText": true,
+	"diagnostic.virtualTextPrefix": " 👉 ",
+	"diagnostic.enableSign": false,
+	"suggest.minTriggerInputLength": 2,
+	"eslint.autoFixOnSave": true
+}
