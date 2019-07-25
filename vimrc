@@ -40,6 +40,8 @@ Plug 'walm/jshint.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
+Plug 'HerringtonDarkholme/yats.vim'
+
 call plug#end()
 
 
