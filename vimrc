@@ -15,8 +15,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kchmck/vim-coffee-script'
-Plug 'matchit.zip'
 " Plug 'kien/ctrlp.vim'
+" Plug 'matchit.zip'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -68,8 +68,8 @@ endif
 if has('nvim')
   set number  "shows line numbers
 
-  tnoremap <Esc> <C-\><C-n>
-  tnoremap <C-v><Esc> <Esc>
+  " tnoremap <Esc> <C-\><C-n>
+  " tnoremap <C-v><Esc> <Esc>
 endif
 
 map 0 ^
