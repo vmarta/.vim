@@ -15,8 +15,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kchmck/vim-coffee-script'
-Plug 'kien/ctrlp.vim'
 Plug 'matchit.zip'
+" Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -73,7 +73,7 @@ if has('nvim')
 endif
 
 map 0 ^
-" Map Y to act like D and C, i.e. to yank until EOL, 
+" Map Y to act like D and C, i.e. to yank until EOL,
 " rather than act as yy (the default)
 map Y y$
 " Maps for easier scrolling up/down
@@ -100,13 +100,15 @@ nnoremap <Leader>s :set hlsearch!<CR>
 " Grep word under cursor
 nnoremap K :Ag! -w <C-R><C-W><CR>
 " Search across multiple files
-nnoremap <Leader>f :Ag! -S 
+nnoremap <Leader>f :Ag!<Space>
+
+nnoremap <c-p> :GFiles<cr>
 
 "More perl-like
 noremap / /\v
 noremap ? ?\v
 "Find/search within the specified files
-" nnoremap <Leader>f :Ggrep -Ei 
+" nnoremap <Leader>f :Ggrep -Ei
 "Search and replace within the current line
 "nnoremap <Leader>rl :s/\v/gc<Left><Left><Left>
 "Search and replace within the current file
@@ -178,7 +180,8 @@ noremap <Leader>= <C-w>=
 
 "convenience mappings for working with buffers
 nnoremap <Leader># :b#<CR>
-nnoremap <Leader>b :ls<CR>:buffer<Space>
+" nnoremap <Leader>b :ls<CR>:buffer<Space>
+nnoremap <Leader>b :Buffers<CR>
 
 
 
