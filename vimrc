@@ -18,7 +18,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'matchit.zip'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'othree/html5-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier'
@@ -311,7 +311,7 @@ let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_github=1
 
 "----------------------------------
-" COC intellisense engine 
+" COC intellisense engine
 nmap <silent> <leader>g <Plug>(coc-definition)
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
