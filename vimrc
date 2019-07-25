@@ -170,10 +170,10 @@ noremap <Leader>H <C-w>h<C-w>\|
 noremap <Leader>L <C-w>l<C-w>\|
 
 "convenience mappings for moving/swapping windows
-noremap <Leader>mj <C-w>J
-noremap <Leader>mk <C-w>K
-noremap <Leader>mh <C-w>H
-noremap <Leader>ml <C-w>L
+" noremap <Leader>mj <C-w>J
+" noremap <Leader>mk <C-w>K
+" noremap <Leader>mh <C-w>H
+" noremap <Leader>ml <C-w>L
 
 "convenience mappings for resizing windows
 noremap <Leader>_ <C-w>_
@@ -315,6 +315,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 "Markdown preview
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_github=1
+nnoremap <Leader>m :Goyo<cr>
 
 "----------------------------------
 " COC intellisense engine
