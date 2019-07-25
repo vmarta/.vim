@@ -10,7 +10,8 @@ Plug 'csscomb/vim-csscomb'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jimmyhchan/dustjs.vim'
 Plug 'jpalardy/vim-slime'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kchmck/vim-coffee-script'
@@ -315,3 +316,11 @@ let vim_markdown_preview_github=1
 nmap <silent> <leader>g <Plug>(coc-definition)
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+"----------------------------------
+" FZF
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+let g:fzf_history_dir = '~/.local/share/fzf-history'
