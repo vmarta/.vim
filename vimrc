@@ -106,9 +106,11 @@ nnoremap <Leader>f :Ag!<Space>
 
 nnoremap <c-p> :GFiles<cr>
 
-"More perl-like
-noremap / /\v
-noremap ? ?\v
+if !exists('g:vscode')
+    "More perl-like
+    noremap / /\v
+    noremap ? ?\v
+endif
 "Find/search within the specified files
 " nnoremap <Leader>f :Ggrep -Ei
 "Search and replace within the current line
@@ -116,7 +118,9 @@ noremap ? ?\v
 "Search and replace within the current file
 nnoremap <Leader>r :%s/\v/gc<Left><Left><Left>
 
-set cursorline  "highlights current line
+if !exists('g:vscode')
+    set cursorline  "highlights current line
+endif
 set scrolloff=5  "have a min of 5 lines above/below the cursor
 set nowrap
 
