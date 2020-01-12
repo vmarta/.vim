@@ -147,12 +147,12 @@ set smartindent
 " nmap p ]p
 
 set laststatus=2  "status line always appears
-set showtabline=2 "tabline always appears
 
-set statusline=%f  "shows file path
-set statusline+=\ %m  "whether file has been modified
-set statusline+=%=  "from now on, right align the text
-set statusline+=%y  "file type (e.g. javascript, dustjs)
+" For more info, see ':help statusline'
+set statusline=%m  "whether file has been modified
+set statusline+=%f  "shows file path
+set statusline+=\ \ %<%{flagship#surround(flagship#filetype())}%w
+" Flagship would set the remaining part of the statusline
 
 set showcmd      "show partial command that you're typing
 set wildmenu     "better command line completion
@@ -295,8 +295,7 @@ let g:jsx_ext_required = 0
 
 "----------------------------------
 "Flagship
-let g:tabprefix = ""
-let g:tablabel = "%N%{flagship#tabmodified()} %<%f%q"
+let g:tabprefix = ""  "no prefix
 
 "----------------------------------
 "Goyo
