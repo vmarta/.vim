@@ -1,9 +1,8 @@
 .*.swf
 .*.swo
 .*.swp
-
 .netrwhist
-
 sessions/*
-
 plugged/**
+node_modules
+.DS_Store
