@@ -10,6 +10,7 @@ Plug 'csscomb/vim-csscomb'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jimmyhchan/dustjs.vim'
 Plug 'jpalardy/vim-slime'
+Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
