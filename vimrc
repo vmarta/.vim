@@ -15,6 +15,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-sneak'
+Plug 'jxnblk/vim-mdx-js'
 Plug 'kchmck/vim-coffee-script'
 " Plug 'kien/ctrlp.vim'
 " Plug 'matchit.zip'
