@@ -1,1 +1,1 @@
-source ~/.nvimrc
+source ~/.vim/vimrc
