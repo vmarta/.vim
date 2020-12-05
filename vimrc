@@ -329,6 +329,10 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 "----------------------------------
+" coc-css
+autocmd FileType scss setl iskeyword+=@-@
+
+"----------------------------------
 " FZF
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
