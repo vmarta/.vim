@@ -329,6 +329,10 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 "----------------------------------
+" install coc extensions
+let g:coc_global_extensions = ['coc-syntax', 'coc-prettier', 'coc-eslint', 'coc-css', 'coc-tsserver', 'coc-json']
+
+"----------------------------------
 " coc-css
 autocmd FileType scss setl iskeyword+=@-@
 
