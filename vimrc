@@ -59,7 +59,7 @@ set background=light
 " let g:solarized_menu=0  "turn off the menu that appears on the top menu bar
 colorscheme solarized
 
-set synmaxcol=256  "avoid hanging on very long lines
+set synmaxcol=500  "avoid hanging on very long lines
 
 if has('gui_running')
   set guifont=Source\ Code\ Pro:h15
