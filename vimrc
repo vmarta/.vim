@@ -105,6 +105,7 @@ nnoremap K :Ag! -w <C-R><C-W><CR>
 nnoremap <Leader>f :Ag!<Space>
 
 nnoremap <c-p> :GFiles<cr>
+nnoremap <c-o> :Files<cr>
 
 if !exists('g:vscode')
     "More perl-like
