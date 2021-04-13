@@ -3,5 +3,5 @@
   "diagnostic.virtualTextPrefix": "  → ",
   "suggest.minTriggerInputLength": 2,
   "eslint.autoFixOnSave": true,
-  "coc.preferences.formatOnSaveFiletypes": ["css", "scss", "json"]
+  "coc.preferences.formatOnSaveFiletypes": ["css", "scss"]
 }
