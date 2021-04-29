@@ -26,7 +26,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier'
 Plug 'rking/ag.vim'
 Plug 'sotte/presenting.vim'
-Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
@@ -211,11 +211,6 @@ au BufNewFile,BufRead *.tmpl set filetype=dustjs
 "Fugitive plugin
 "auto-clean fugitive buffers
 au BufReadPost fugitive://* set bufhidden=delete
-
-"----------------------------------
-"TComment plugin
-"set a different shortcut to avoid conflict with my mappings
-let g:tcomment_mapleader2 = "<Leader>/"
 
 "----------------------------------
 "SuperTab plugin
