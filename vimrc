@@ -6,6 +6,7 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
 Plug 'aliva/vim-fish'
 Plug 'altercation/vim-colors-solarized'
+Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'csscomb/vim-csscomb'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jimmyhchan/dustjs.vim'
@@ -17,6 +18,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'kchmck/vim-coffee-script'
+Plug 'lambdalisue/fern.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -328,3 +330,11 @@ xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+"----------------------------------
+" FixCursorHold
+let g:cursorhold_updatetime = 100
+
+"----------------------------------
+" Fern
+nnoremap <leader>e :Fern . -reveal=%<cr>
