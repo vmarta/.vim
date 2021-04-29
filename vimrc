@@ -38,8 +38,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'walm/jshint.vim'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
 
 Plug 'HerringtonDarkholme/yats.vim'
 
@@ -190,16 +188,6 @@ noremap <Leader>= <C-w>=
 nnoremap <Leader># :b#<CR>
 " nnoremap <Leader>b :ls<CR>:buffer<Space>
 nnoremap <Leader>b :Buffers<CR>
-
-
-
-"----------------------------------
-"Session plugin options
-let g:session_autoload = "no"
-let g:session_autosave = "yes"
-let g:session_persist_colors = 0
-"forget about hidden buffers
-set sessionoptions-=buffers
 
 "----------------------------------
 "CSS (and SCSS) options
