@@ -20,9 +20,8 @@ Plug 'jxnblk/vim-mdx-js'
 Plug 'kchmck/vim-coffee-script'
 Plug 'lambdalisue/fern.vim'
 Plug 'mattn/emmet-vim'
-Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'othree/html5-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier'
 Plug 'rking/ag.vim'
@@ -274,11 +273,6 @@ let g:projectionist_heuristics = {
 "----------------------------------
 "Neovim
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-"----------------------------------
-"vim-jsx
-"Allows highlighting of jsx code in regular .js files
-let g:jsx_ext_required = 0
 
 "----------------------------------
 "Flagship
