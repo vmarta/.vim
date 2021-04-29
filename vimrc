@@ -198,10 +198,6 @@ au FileType css,scss set iskeyword+=-
 au FileType javascript set iskeyword+=-
 
 "----------------------------------
-"JavaScript libraries syntax
-let g:used_javascript_libs = 'jquery'
-
-"----------------------------------
 "Konf, tmpl files
 au BufNewFile,BufRead *.konf set filetype=javascript
 au BufNewFile,BufRead *.include set filetype=javascript
@@ -211,11 +207,6 @@ au BufNewFile,BufRead *.tmpl set filetype=dustjs
 "Fugitive plugin
 "auto-clean fugitive buffers
 au BufReadPost fugitive://* set bufhidden=delete
-
-"----------------------------------
-"SuperTab plugin
-"smart completion based on the text preceding the cursor
-let g:SuperTabDefaultCompletionType = "context"
 
 "----------------------------------
 "Sneak plugin
