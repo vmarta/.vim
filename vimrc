@@ -280,6 +280,8 @@ nnoremap <Leader>m :Goyo<cr>
 nmap <silent> <leader>g <Plug>(coc-definition)
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 " To fix JavaScript heap out-of-memory (e.g when installing large npm packages)
 let g:coc_node_args = ['--max-old-space-size=8192']
 
