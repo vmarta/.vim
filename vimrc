@@ -9,6 +9,10 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'csscomb/vim-csscomb'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'heavenshell/vim-jsdoc', {
+  \ 'for': ['javascript', 'javascript.jsx','typescript'],
+  \ 'do': 'make install'
+\}
 Plug 'jimmyhchan/dustjs.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'jparise/vim-graphql'
@@ -22,6 +26,7 @@ Plug 'lambdalisue/fern.vim'
 Plug 'mattn/emmet-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'othree/jsdoc-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier'
 Plug 'rking/ag.vim'
