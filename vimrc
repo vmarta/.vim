@@ -25,11 +25,11 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'lambdalisue/fern.vim'
 Plug 'mattn/emmet-vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'mhinz/vim-grepper'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'othree/jsdoc-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier'
-Plug 'rking/ag.vim'
 Plug 'sotte/presenting.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-flagship'
@@ -104,9 +104,9 @@ nnoremap # #:set hlsearch<CR>N
 nnoremap <Leader>s :set hlsearch!<CR>
 
 " Grep word under cursor
-nnoremap K :Ag! -w <C-R><C-W><CR>
+nnoremap K :Grepper -tool rg -cword -noprompt<CR>
 " Search across multiple files
-nnoremap <Leader>f :Ag!<Space>
+nnoremap <Leader>f :GrepperRg<Space>
 
 nnoremap <c-p> :GFiles<cr>
 nnoremap <c-l> :Files<cr>
@@ -313,3 +313,9 @@ let g:cursorhold_updatetime = 100
 "----------------------------------
 " Fern
 nnoremap <leader>e :Fern . -reveal=%<cr>
+
+"----------------------------------
+" Grepper
+runtime plugin/grepper.vim
+" Have ripgrep search with smart-case option
+let g:grepper.rg.grepprg .= ' --smart-case'
