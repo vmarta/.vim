@@ -108,8 +108,8 @@ nnoremap K :Grepper -tool rg -cword -noprompt<CR>
 " Search across multiple files
 nnoremap <Leader>f :GrepperRg<Space>
 
-nnoremap <c-p> :GFiles<cr>
-nnoremap <c-l> :Files<cr>
+nnoremap <Leader>; :GFiles<cr>
+nnoremap <Leader>: :Files<cr>
 
 if !exists('g:vscode')
     "More perl-like
