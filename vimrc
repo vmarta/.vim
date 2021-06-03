@@ -31,6 +31,7 @@ Plug 'othree/jsdoc-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier'
 Plug 'sotte/presenting.vim'
+Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
@@ -116,12 +117,9 @@ if !exists('g:vscode')
     noremap / /\v
     noremap ? ?\v
 endif
-"Find/search within the specified files
-" nnoremap <Leader>f :Ggrep -Ei
-"Search and replace within the current line
-"nnoremap <Leader>rl :s/\v/gc<Left><Left><Left>
+
 "Search and replace within the current file
-nnoremap <Leader>r :%s/\v/gc<Left><Left><Left>
+nnoremap <Leader>r :%s/\v/g<Left><Left>
 
 if !exists('g:vscode')
     set cursorline  "highlights current line
