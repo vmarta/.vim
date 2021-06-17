@@ -316,5 +316,5 @@ nnoremap <leader>e :Fern . -reveal=%<cr>
 "----------------------------------
 " Grepper
 runtime plugin/grepper.vim
-" Have ripgrep search with smart-case option
-let g:grepper.rg.grepprg .= ' --smart-case'
+" Pass in additional flags to the underlying ripgrep
+let g:grepper.rg.grepprg .= ' --smart-case --hidden --glob !.git'
