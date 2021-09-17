@@ -4,7 +4,6 @@ call plug#begin()
 
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
-Plug 'aliva/vim-fish'
 Plug 'altercation/vim-colors-solarized'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'csscomb/vim-csscomb'
@@ -14,38 +13,27 @@ Plug 'heavenshell/vim-jsdoc', {
   \ 'do': 'make install'
 \}
 Plug 'jimmyhchan/dustjs.vim'
-Plug 'jpalardy/vim-slime'
-Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
 Plug 'jxnblk/vim-mdx-js'
-Plug 'kchmck/vim-coffee-script'
 Plug 'lambdalisue/fern.vim'
 Plug 'mattn/emmet-vim'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mhinz/vim-grepper'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'othree/jsdoc-syntax.vim'
-Plug 'pangloss/vim-javascript'
+Plug 'nvim-treesitter/nvim-treesitter', { 'branch': '0.5-compat', 'do': ':TSUpdate' }
 Plug 'prettier/vim-prettier'
-Plug 'sotte/presenting.vim'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'walm/jshint.vim'
-
-Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
@@ -318,3 +306,13 @@ nnoremap <leader>e :Fern . -reveal=%<cr>
 runtime plugin/grepper.vim
 " Pass in additional flags to the underlying ripgrep
 let g:grepper.rg.grepprg .= ' --smart-case --hidden --glob !.git'
+
+"----------------------------------
+" Treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "javascript", "jsdoc", "typescript", "scss", "html", "fish", "graphql" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = { enable = true },
+  indent = { enable = true }
+}
+EOF
