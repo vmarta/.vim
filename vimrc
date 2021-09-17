@@ -212,30 +212,6 @@ nmap F <Plug>Sneak_S
 " omap F <Plug>Sneak_S
 
 "----------------------------------
-"Projectionist plugin
-let g:projectionist_heuristics = {
-    \ "adaptation/&assets/js/ui/": {
-    \     "adaptation/views/*.js": {
-    \          "type": "view"
-    \     },
-    \     "adaptation/views/parsers/*.js": {
-    \         "type": "parser"
-    \     },
-    \     "adaptation/views/decorators/*.js": {
-    \         "type": "decorator"
-    \     },
-    \     "assets/js/ui/view-scripts/*.js": {
-    \         "type": "ui"
-    \     },
-    \     "adaptation/templates/*.dust": {
-    \         "type": "template"
-    \     },
-    \     "adaptation/templates/partials/*.dust": {
-    \         "type": "partial"
-    \     }
-    \ }}
-
-"----------------------------------
 "Neovim
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
