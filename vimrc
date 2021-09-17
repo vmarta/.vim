@@ -286,9 +286,10 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " To fix JavaScript heap out-of-memory (e.g when installing large npm packages)
-let g:coc_node_args = ['--max-old-space-size=8192']
+" let g:coc_node_args = ['--max-old-space-size=8192']
 
-"----------------------------------
+let g:coc_node_path = '/Users/vmarta/.nvm/versions/node/v14.16.1/bin/node'
+
 " install coc extensions
 let g:coc_global_extensions = ['coc-syntax', 'coc-prettier', 'coc-eslint', 'coc-css', 'coc-tsserver', 'coc-json']
 
