@@ -52,19 +52,7 @@ set termguicolors
 colorscheme github_light_default
 
 set synmaxcol=500  "avoid hanging on very long lines
-
-if has('gui_running')
-  set guifont=Source\ Code\ Pro:h15
-  set guioptions-=T  "hide toolbar
-  set number  "shows line numbers
-endif
-
-if has('nvim')
-  set number  "shows line numbers
-
-  " tnoremap <Esc> <C-\><C-n>
-  " tnoremap <C-v><Esc> <Esc>
-endif
+set number  "shows line numbers
 
 map 0 ^
 " Map Y to act like D and C, i.e. to yank until EOL,
@@ -209,10 +197,6 @@ nmap F <Plug>Sneak_S
 " xmap F <Plug>Sneak_S
 " omap f <Plug>Sneak_s
 " omap F <Plug>Sneak_S
-
-"----------------------------------
-"Neovim
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 "----------------------------------
 "Flagship
