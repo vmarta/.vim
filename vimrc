@@ -4,7 +4,6 @@ call plug#begin()
 
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
-Plug 'altercation/vim-colors-solarized'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'csscomb/vim-csscomb'
 Plug 'editorconfig/editorconfig-vim'
@@ -25,6 +24,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', { 'branch': '0.5-compat', 'do': ':TSUpdate' }
 Plug 'prettier/vim-prettier'
+Plug 'projekt0n/github-nvim-theme'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-flagship'
@@ -47,10 +47,9 @@ set secure
 set hidden  "allows unsaved buffer to stay in background/hidden
 let mapleader = "\<Space>"
 
-au VimEnter * syntax enable
 set background=light
-" let g:solarized_menu=0  "turn off the menu that appears on the top menu bar
-colorscheme solarized
+set termguicolors
+colorscheme github_light_default
 
 set synmaxcol=500  "avoid hanging on very long lines
 
