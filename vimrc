@@ -49,9 +49,10 @@ let mapleader = "\<Space>"
 
 set background=light
 set termguicolors
+let g:github_dark_float = 1
 colorscheme github_light_default
 
-set synmaxcol=500  "avoid hanging on very long lines
+" set synmaxcol=500  "avoid hanging on very long lines
 set number  "shows line numbers
 
 map 0 ^
@@ -214,6 +215,7 @@ function! s:goyo_leave()
   set nowrap
   set nolinebreak
   set nolist
+  colorscheme github_light_default  " so that footer is rendered properly
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
