@@ -94,9 +94,6 @@ if !exists('g:vscode')
     noremap ? ?\v
 endif
 
-"Search and replace within the current file
-nnoremap <Leader>r :%s/\v/g<Left><Left>
-
 if !exists('g:vscode')
     set cursorline  "highlights current line
 endif
@@ -229,19 +226,35 @@ nnoremap <Leader>m :Goyo<cr>
 
 "----------------------------------
 " COC intellisense engine
-nmap <silent> <leader>g <Plug>(coc-definition)
-nmap <silent> <leader>h :<C-U>call CocActionAsync('doHover')<CR>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gh :<C-U>call CocActionAsync('doHover')<CR>
+
 " To fix JavaScript heap out-of-memory (e.g when installing large npm packages)
 " let g:coc_node_args = ['--max-old-space-size=8192']
 
+" Use a separate node instance
 let g:coc_node_path = '/Users/vmarta/.nvm/versions/node/v14.16.1/bin/node'
 
 " install coc extensions
 let g:coc_global_extensions = ['coc-syntax', 'coc-prettier', 'coc-eslint', 'coc-css', 'coc-tsserver', 'coc-json']
+
+" manually trigger completion
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
 
 "----------------------------------
 " coc-css
