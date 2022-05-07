@@ -2,5 +2,7 @@
   "suggest.minTriggerInputLength": 2,
   "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": ["css", "scss"],
-  "coc.preferences.listOfWorkspaceEdit": "location"
+  "coc.preferences.listOfWorkspaceEdit": "location",
+  // Disable watchman because tsserver could crash when running a build
+  "coc.preferences.watchmanPath": ""
 }
