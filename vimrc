@@ -183,6 +183,7 @@ au BufNewFile,BufRead *.tmpl set filetype=dustjs
 "Fugitive plugin
 "auto-clean fugitive buffers
 au BufReadPost fugitive://* set bufhidden=delete
+nmap gb :Git blame<CR>
 
 "----------------------------------
 "Sneak plugin
@@ -255,6 +256,10 @@ endif
 
 " Symbol renaming
 nmap <leader>rn <Plug>(coc-rename)
+
+" Navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 "----------------------------------
 " coc-css
