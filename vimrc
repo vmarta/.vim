@@ -83,7 +83,7 @@ nnoremap <Leader>s :set hlsearch!<CR>
 " Grep word under cursor
 nnoremap K :Grepper -tool rg -highlight -noprompt -query '\b<c-r><c-w>\b'<CR>
 " Search across multiple files
-nnoremap <Leader>f :GrepperRg -highlight<Space>
+nnoremap <Leader>f :Grepper -tool rg -highlight -noprompt -query<Space>
 
 nnoremap <Leader>; :GFiles<cr>
 nnoremap <Leader>: :Files<cr>
