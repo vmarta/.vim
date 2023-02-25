@@ -4,7 +4,6 @@ call plug#begin()
 
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
-Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'csscomb/vim-csscomb'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'heavenshell/vim-jsdoc', {
@@ -228,6 +227,10 @@ nnoremap <Leader>m :Goyo<cr>
 "----------------------------------
 " COC intellisense engine
 
+" Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
+" delays and poor user experience
+set updatetime=300
+
 " Use tab for trigger completion with characters ahead and navigate
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file
@@ -255,7 +258,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gh :<C-U>call CocActionAsync('doHover')<CR>
-"----------------------------------
 
 " To fix JavaScript heap out-of-memory (e.g when installing large npm packages)
 " let g:coc_node_args = ['--max-old-space-size=8192']
@@ -291,10 +293,6 @@ xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-"----------------------------------
-" FixCursorHold
-let g:cursorhold_updatetime = 100
 
 "----------------------------------
 " Fern
