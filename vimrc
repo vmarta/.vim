@@ -22,7 +22,7 @@ Plug 'lambdalisue/fern.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-grepper'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'nvim-treesitter/nvim-treesitter', { 'branch': '0.5-compat', 'do': ':TSUpdate' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'prettier/vim-prettier'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'stefandtw/quickfix-reflector.vim'
@@ -291,7 +291,7 @@ let g:grepper.rg.grepprg .= ' --smart-case --hidden --glob !.git'
 " Treesitter
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "javascript", "jsdoc", "typescript", "scss", "html", "fish", "graphql" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = { "javascript", "jsdoc", "typescript", "scss", "html", "fish", "graphql", "lua" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = { enable = true },
   indent = { enable = true }
 }
