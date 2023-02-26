@@ -6,6 +6,7 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
 Plug 'csscomb/vim-csscomb'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ggandor/leap.nvim'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
@@ -15,7 +16,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-dirvish'
-Plug 'justinmk/vim-sneak'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'lambdalisue/fern.vim'
 Plug 'mattn/emmet-vim'
@@ -185,18 +185,6 @@ au BufReadPost fugitive://* set bufhidden=delete
 nmap gb :Git blame<CR>
 
 "----------------------------------
-"Sneak plugin
-" let g:sneak#streak = 1
-let g:sneak#use_ic_scs = 1
-" map f to use Sneak
-nmap f <Plug>Sneak_s
-nmap F <Plug>Sneak_S
-" xmap f <Plug>Sneak_s
-" xmap F <Plug>Sneak_S
-" omap f <Plug>Sneak_s
-" omap F <Plug>Sneak_S
-
-"----------------------------------
 "Flagship
 let g:tabprefix = ""  "no prefix
 
@@ -313,3 +301,7 @@ require'nvim-treesitter.configs'.setup {
   indent = { enable = true }
 }
 EOF
+
+"----------------------------------
+" Leap
+lua require('leap').add_default_mappings()
