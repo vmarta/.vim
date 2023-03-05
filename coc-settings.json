@@ -1,9 +1,11 @@
 {
   "suggest.minTriggerInputLength": 2,
   "suggest.noselect": true,
+  "suggest.floatConfig": {"border": true},
+  "hover.floatConfig": {"border": true},
+  "diagnostic.floatConfig": {"border": true},
   "eslint.autoFixOnSave": true,
-  "coc.preferences.formatOnSaveFiletypes": ["css", "scss"],
-  "coc.preferences.listOfWorkspaceEdit": "location",
+  "[css][scss]": {"coc.preferences.formatOnSave": true},
   // Disable watchman because tsserver could crash when running a build
   "coc.preferences.watchmanPath": ""
 }
