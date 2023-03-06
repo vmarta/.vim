@@ -2,29 +2,24 @@ call plug#begin()
 
 " NOTE - if you install NPM module, also add it to the list in ~/.nvm/default-packages
 
+" TODO: separate between nvim-only plugins and not
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
-Plug 'csscomb/vim-csscomb'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'ggandor/leap.nvim'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
 \}
-Plug 'jimmyhchan/dustjs.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'lambdalisue/fern.vim'
-Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-grepper'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}  " NOTE: this can run in both vim and neovim
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-Plug 'prettier/vim-prettier'
 Plug 'projekt0n/github-nvim-theme'
-Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
@@ -36,7 +31,7 @@ Plug 'tpope/vim-unimpaired'
 
 call plug#end()
 
-
+" TODO: separate between nvim-only configurations and not
 
 " Allows project-level .nvimrc files
 " https://medium.com/@dnrvs/per-project-settings-in-nvim-fc8c8877d970
