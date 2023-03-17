@@ -297,6 +297,13 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+" Code folding with treesitter
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+
+" Opening a file would no longer closes all folds
+autocmd BufReadPost,FileReadPost * normal zR
+
 "----------------------------------
 " Leap
 lua require('leap').add_default_mappings()
