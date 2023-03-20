@@ -20,6 +20,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " NOTE: this can run in both vim and neovim
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'projekt0n/github-nvim-theme'
+Plug 'rktjmp/fwatch.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
@@ -265,6 +266,19 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
+" Workaround for package rebuild causing tsserver to not "see" that package
+" let g:restart_tsserver = 0
+
+" function! RestartTSServer() 
+"   if g:restart_tsserver == 1
+"     CocCommand tsserver.restart
+"     let g:restart_tsserver = 0
+"   endif 
+" endfunction
+
+" autocmd BufWritePost */pwa-kit/packages/commerce-sdk-react/*,*/pwa-kit/packages/pwa-kit-react-sdk/*,*/pwa-kit/packages/pwa-kit-dev/*,*/pwa-kit/packages/pwa-kit-runtime/* let g:restart_tsserver = 1
+" autocmd BufEnter */pwa-kit/packages/template-* call timer_start(3000, { -> execute(':call RestartTSServer()')})
+
 "----------------------------------
 " coc-css
 autocmd FileType scss setl iskeyword+=@-@
@@ -307,3 +321,35 @@ autocmd BufReadPost,FileReadPost * normal zR
 "----------------------------------
 " Leap
 lua require('leap').add_default_mappings()
+
+"----------------------------------
+" fwatch
+" Workaround for package rebuild causing tsserver to not "see" that package
+lua <<EOF
+local fwatch = require('fwatch')
+
+local defer_restart_tsserver = nil
+local timeout = 3000
+
+local get_callbacks = function(package_name)
+  return {
+    on_event = function()
+      if not defer_restart_tsserver then
+        defer_restart_tsserver = vim.defer_fn(function() 
+          vim.cmd("CocCommand tsserver.restart")
+          defer_restart_tsserver = nil
+        end, timeout) 
+      end
+    end,
+    on_error = function(error, unwatch)
+      unwatch()
+      print("[fwatch] error while watching directory " .. package_name .. ": " .. error)
+    end
+  }
+end
+
+fwatch.watch("packages/commerce-sdk-react/dist/", get_callbacks("commerce-sdk-react"))
+fwatch.watch("packages/pwa-kit-dev/dist/", get_callbacks("pwa-kit-dev"))
+fwatch.watch("packages/pwa-kit-react-sdk/dist/", get_callbacks("pwa-kit-react-sdk"))
+fwatch.watch("packages/pwa-kit-runtime/dist/", get_callbacks("pwa-kit-runtime"))
+EOF
