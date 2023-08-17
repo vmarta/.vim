@@ -303,7 +303,7 @@ let g:grepper.rg.grepprg .= ' --smart-case --hidden --glob !.git'
 " Treesitter
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "javascript", "jsdoc", "typescript", "scss", "html", "fish", "graphql", "lua" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = { "javascript", "jsdoc", "typescript", "tsx", "scss", "html", "fish", "graphql", "lua", "yaml", "json", "jsonc" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = { enable = true },
   indent = { enable = true }
 }
