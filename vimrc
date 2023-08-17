@@ -277,6 +277,9 @@ endfunction
 autocmd BufWritePost */pwa-kit/packages/commerce-sdk-react/*,*/pwa-kit/packages/pwa-kit-react-sdk/*,*/pwa-kit/packages/pwa-kit-dev/*,*/pwa-kit/packages/pwa-kit-runtime/* let g:restart_tsserver = 1
 autocmd BufEnter */pwa-kit/packages/template-* call timer_start(7000, { -> execute(':call RestartTSServer()')})
 
+" For manual restart
+command TSServerRestart CocCommand tsserver.restart
+
 "----------------------------------
 " coc-css
 autocmd FileType scss setl iskeyword+=@-@
