@@ -131,31 +131,29 @@ set visualbell
 "quicker escaping from insert to normal mode
 inoremap jk <Esc>
 
-"convenience mappings for moving to other windows
-noremap <Leader>w <C-w>w
-noremap <Leader>j <C-w>j
-noremap <Leader>k <C-w>k
-noremap <Leader>h <C-w>h
-noremap <Leader>l <C-w>l
-noremap <Leader>J <C-w>j<C-w>_
-noremap <Leader>K <C-w>k<C-w>_
-noremap <Leader>H <C-w>h<C-w>\|
-noremap <Leader>L <C-w>l<C-w>\|
+"moving to another window
+noremap <Leader>ww <C-w>w
+noremap <Leader>wj <C-w>j
+noremap <Leader>wk <C-w>k
+noremap <Leader>wh <C-w>h
+noremap <Leader>wl <C-w>l
+"adding/removing windows
+noremap <Leader>wv <C-w>v<C-w>w
+noremap <Leader>ws <C-w>s<C-w>w
+noremap <Leader>wo <C-w>o
+noremap <Leader>wq <C-w>c
+"swapping windows
+noremap <Leader>wJ <C-w>J
+noremap <Leader>wK <C-w>K
+noremap <Leader>wH <C-w>H
+noremap <Leader>wL <C-w>L
+"resizing windows
+noremap <Leader>w_ <C-w>_
+noremap <Leader>w\| <C-w>\|
+noremap <Leader>w= <C-w>=
 
-"convenience mappings for moving/swapping windows
-" noremap <Leader>mj <C-w>J
-" noremap <Leader>mk <C-w>K
-" noremap <Leader>mh <C-w>H
-" noremap <Leader>ml <C-w>L
-
-"convenience mappings for resizing windows
-noremap <Leader>_ <C-w>_
-noremap <Leader>\| <C-w>\|
-noremap <Leader>= <C-w>=
-
-"convenience mappings for working with buffers
+"working with buffers
 nnoremap <Leader># :b#<CR>
-" nnoremap <Leader>b :ls<CR>:buffer<Space>
 nnoremap <Leader>b :Buffers<CR>
 
 "----------------------------------
