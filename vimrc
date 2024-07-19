@@ -204,6 +204,8 @@ let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_github=1
 nnoremap <Leader>m :Goyo<cr>
 
+command! MarkedOpen execute '!open -a /Applications/Setapp/Marked.app ' . expand('%:p')
+
 "----------------------------------
 " COC intellisense engine
 
@@ -258,6 +260,8 @@ endif
 " Symbol renaming
 nmap <leader>rn <Plug>(coc-rename)
 
+nnoremap <Leader>d :CocDiagnostics<CR>
+
 " Navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -265,11 +269,11 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " Workaround for package rebuild causing tsserver to not "see" that package
 let g:restart_tsserver = 0
 
-function! RestartTSServer() 
+function! RestartTSServer()
   if g:restart_tsserver == 1
     CocCommand tsserver.restart
     let g:restart_tsserver = 0
-  endif 
+  endif
 endfunction
 
 autocmd BufWritePost */pwa-kit/packages/commerce-sdk-react/*,*/pwa-kit/packages/pwa-kit-react-sdk/*,*/pwa-kit/packages/pwa-kit-dev/*,*/pwa-kit/packages/pwa-kit-runtime/* let g:restart_tsserver = 1
