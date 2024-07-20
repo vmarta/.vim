@@ -48,14 +48,14 @@ colorscheme github_light
 set number  "shows line numbers
 
 map 0 ^
+map gs ^
+nmap gl $
+vmap gl $h
 " Map Y to act like D and C, i.e. to yank until EOL,
 " rather than act as yy (the default)
 map Y y$
-" Maps for easier scrolling up/down
-" if has('gui_running')
-" 	map <D-d> <C-d>
-" 	map <D-u> <C-u>
-" endif
+map ge G
+nmap U <c-r>
 
 " copy and paste
 vmap <Leader>c "+y
@@ -254,7 +254,7 @@ else
 endif
 
 " Symbol renaming
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>r <Plug>(coc-rename)
 
 nnoremap <Leader>d :CocDiagnostics<CR>
 
