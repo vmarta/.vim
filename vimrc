@@ -47,20 +47,20 @@ colorscheme github_light
 " set synmaxcol=500  "avoid hanging on very long lines
 set number  "shows line numbers
 
-map 0 ^
-map gs ^
-nmap gl $
-vmap gl $h
+noremap 0 ^
+noremap gs ^
+nnoremap gl $
+vnoremap gl $h
 " Map Y to act like D and C, i.e. to yank until EOL,
 " rather than act as yy (the default)
-map Y y$
-map ge G
-nmap U <c-r>
+noremap Y y$
+noremap ge G
+nnoremap U <c-r>
 
 " copy and paste
-vmap <Leader>c "+y
-nmap <Leader>p "+p
-vmap <Leader>p c<ESC>"+p
+vnoremap <Leader>c "+y
+nnoremap <Leader>p "+p
+vnoremap <Leader>p c<ESC>"+p
 
 set ignorecase "search is case-insensitive
 set smartcase  "search becomes case-sensitive when using capital letters
