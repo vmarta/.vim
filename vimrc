@@ -3,7 +3,6 @@ call plug#begin()
 " NOTE - if you install NPM module, also add it to the list in ~/.nvm/default-packages
 
 " TODO: separate between nvim-only plugins and not
-Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
 Plug 'ggandor/leap.nvim'
 Plug 'heavenshell/vim-jsdoc', {
@@ -199,11 +198,8 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 "----------------------------------
-"Markdown preview
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_github=1
+"Markdown related
 nnoremap <Leader>m :Goyo<cr>
-
 command! MarkedOpen execute '!open -a /Applications/Setapp/Marked.app ' . expand('%:p')
 
 "----------------------------------
