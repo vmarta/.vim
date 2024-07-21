@@ -265,10 +265,14 @@ nmap <leader>a  <Plug>(coc-codeaction-cursor)
 nmap <leader>A  <Plug>(coc-codeaction-source)
 " Show commands
 nnoremap <silent><nowait> <space>?  :<C-u>CocList commands<cr>
+
 " Select outward to the parent node
 " (Requires 'textDocument/selectionRange' support of language server)
 nmap <silent> <m-o> <Plug>(coc-range-select)
 xmap <silent> <m-o> <Plug>(coc-range-select)
+" ...and this is the opposite
+nmap <silent> <m-i> <Plug>(coc-range-select-backward)
+xmap <silent> <m-i> <Plug>(coc-range-select-backward)
 
 nnoremap <Leader>d :CocDiagnostics<CR>
 " Navigate diagnostics
