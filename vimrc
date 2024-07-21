@@ -339,6 +339,12 @@ vim.keymap.set({'x', 'o'}, 'S', '<Plug>(leap-backward)')
 
 -- When Leap is active, grey out all the code
 vim.api.nvim_set_hl(0, 'LeapBackdrop', { link = 'Comment' })
+
+local leap = require('leap')
+-- exclude `uvUV` because they look similar at a glance
+leap.opts.safe_labels = 'sfnt/SFNLHMGTZ?'
+leap.opts.labels = 'sfnjklhodweimbyrgtaqpcxz/SFNJKLHODWEIMBYRGTAQPCXZ?'
+
 EOF
 
 "----------------------------------
