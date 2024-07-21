@@ -48,6 +48,7 @@ set termguicolors
 colorscheme github_light
 
 " set synmaxcol=500  "avoid hanging on very long lines
+set sidescroll=0  "on navigating long unwrapped lines, this jumps the cursor to the middle of the window
 set number  "shows line numbers
 
 noremap 0 ^
@@ -316,9 +317,20 @@ let g:grepper.rg.grepprg .= ' --smart-case --hidden --glob !.git'
 " Treesitter
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "javascript", "jsdoc", "typescript", "tsx", "scss", "html", "fish", "graphql", "lua", "yaml", "json", "jsonc" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  highlight = { enable = true },
-  indent = { enable = true }
+  ensure_installed = { "javascript", "jsdoc", "typescript", "tsx", "scss", "html", "fish", "graphql", "lua", "yaml", "json", "jsonc" },
+  indent = { enable = true },
+  highlight = {
+    enable = true,
+    -- disable slow treesitter highlight for large files
+    disable = function(lang, buf)
+        local max_filesize = 100 * 1024 -- 100 KB
+        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        if ok and stats and stats.size > max_filesize then
+            return true
+        end
+    end,
+    additional_vim_regex_highlighting = false
+  }
 }
 EOF
 
