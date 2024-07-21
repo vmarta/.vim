@@ -11,10 +11,10 @@ Plug 'heavenshell/vim-jsdoc', {
 \}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim', {'for': ['markdown', 'text']}
 Plug 'justinmk/vim-dirvish'
 Plug 'jxnblk/vim-mdx-js'
-Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern.vim', {'on': 'Fern'}
 Plug 'mhinz/vim-grepper'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " NOTE: this can run in both vim and neovim
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
