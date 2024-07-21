@@ -28,6 +28,9 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'drybalka/tree-climber.nvim'
+
 call plug#end()
 
 " TODO: separate between nvim-only configurations and not
@@ -325,3 +328,19 @@ vim.keymap.set('n',        'S', '<Plug>(leap-from-window)')
 vim.keymap.set({'x', 'o'}, 's', '<Plug>(leap-forward)')
 vim.keymap.set({'x', 'o'}, 'S', '<Plug>(leap-backward)')
 EOF
+
+"----------------------------------
+" Tree Climber
+lua <<EOF
+local keyopts = { noremap = true, silent = true }
+vim.keymap.set({'n', 'v', 'o'}, '<m-o>', require('tree-climber').goto_parent, keyopts)
+-- vim.keymap.set({'n', 'v', 'o'}, '<m-i>', require('tree-climber').goto_child, keyopts)
+vim.keymap.set({'n', 'v', 'o'}, '<m-n>', function() require('tree-climber').goto_next({skip_comments = true}) end, keyopts)
+vim.keymap.set({'n', 'v', 'o'}, '<m-p>', function() require('tree-climber').goto_prev({skip_comments = true}) end, keyopts)
+vim.keymap.set({'v', 'o'}, 'in', require('tree-climber').select_node, keyopts)
+-- vim.keymap.set('n', '<c-k>', require('tree-climber').swap_prev, keyopts)
+-- vim.keymap.set('n', '<c-j>', require('tree-climber').swap_next, keyopts)
+-- vim.keymap.set('n', '<c-h>', require('tree-climber').highlight_node, keyopts)
+EOF
+
+source ~/.vim/vimrc.local
