@@ -54,7 +54,7 @@ set number  "shows line numbers
 noremap 0 ^
 noremap gs ^
 nnoremap gl $
-vnoremap gl $h
+xnoremap gl $h
 " Map Y to act like D and C, i.e. to yank until EOL,
 " rather than act as yy (the default)
 noremap Y y$
@@ -62,9 +62,9 @@ noremap ge G
 nnoremap U <c-r>
 
 " copy and paste
-vnoremap <Leader>c "+y
+xnoremap <Leader>c "+y
 nnoremap <Leader>p "+p
-vnoremap <Leader>p c<ESC>"+p
+xnoremap <Leader>p c<ESC>"+p
 
 set ignorecase "search is case-insensitive
 set smartcase  "search becomes case-sensitive when using capital letters
