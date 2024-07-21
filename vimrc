@@ -258,12 +258,21 @@ endif
 
 " Symbol renaming
 nmap <leader>r <Plug>(coc-rename)
+" Code actions for under the cursor
+nmap <leader>a  <Plug>(coc-codeaction-cursor)
+" Code actions for the entire buffer
+nmap <leader>A  <Plug>(coc-codeaction-source)
+" Show commands
+nnoremap <silent><nowait> <space>?  :<C-u>CocList commands<cr>
+" Select outward to the parent node
+" (Requires 'textDocument/selectionRange' support of language server)
+nmap <silent> <m-o> <Plug>(coc-range-select)
+xmap <silent> <m-o> <Plug>(coc-range-select)
 
 nnoremap <Leader>d :CocDiagnostics<CR>
-
 " Navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> [d <Plug>(coc-diagnostic-prev)
+nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
 " Workaround for package rebuild causing tsserver to not "see" that package
 let g:restart_tsserver = 0
@@ -333,14 +342,7 @@ EOF
 " Tree Climber
 lua <<EOF
 local keyopts = { noremap = true, silent = true }
-vim.keymap.set({'n', 'v', 'o'}, '<m-o>', require('tree-climber').goto_parent, keyopts)
--- vim.keymap.set({'n', 'v', 'o'}, '<m-i>', require('tree-climber').goto_child, keyopts)
-vim.keymap.set({'n', 'v', 'o'}, '<m-n>', function() require('tree-climber').goto_next({skip_comments = true}) end, keyopts)
-vim.keymap.set({'n', 'v', 'o'}, '<m-p>', function() require('tree-climber').goto_prev({skip_comments = true}) end, keyopts)
-vim.keymap.set({'v', 'o'}, 'in', require('tree-climber').select_node, keyopts)
--- vim.keymap.set('n', '<c-k>', require('tree-climber').swap_prev, keyopts)
--- vim.keymap.set('n', '<c-j>', require('tree-climber').swap_next, keyopts)
--- vim.keymap.set('n', '<c-h>', require('tree-climber').highlight_node, keyopts)
+vim.keymap.set({'n', 'v', 'o'}, '<m-b>', require('tree-climber').goto_parent, keyopts)
 EOF
 
 source ~/.vim/vimrc.local
