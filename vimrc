@@ -135,28 +135,29 @@ set visualbell
 inoremap jk <Esc>
 
 "moving to another window
-noremap <Leader>ww <C-w>w
-noremap <Leader>wj <C-w>j
-noremap <Leader>wk <C-w>k
-noremap <Leader>wh <C-w>h
-noremap <Leader>wl <C-w>l
+noremap <Leader>w <C-w>w
+noremap <Leader><Space>j <C-w>j
+noremap <Leader><Space>k <C-w>k
+noremap <Leader><Space>h <C-w>h
+noremap <Leader><Space>l <C-w>l
 "adding/removing windows
-noremap <Leader>wv <C-w>v<C-w>w
-noremap <Leader>ws <C-w>s<C-w>w
-noremap <Leader>wo <C-w>o
-noremap <Leader>wq <C-w>c
+noremap <Leader><Leader>v <C-w>v<C-w>w
+noremap <Leader><Space>s <C-w>s<C-w>w
+noremap <Leader><Space>o <C-w>o
+noremap <Leader><Space>q <C-w>c
 "swapping windows
-noremap <Leader>wJ <C-w>J
-noremap <Leader>wK <C-w>K
-noremap <Leader>wH <C-w>H
-noremap <Leader>wL <C-w>L
+noremap <Leader><Space>J <C-w>J
+noremap <Leader><Space>K <C-w>K
+noremap <Leader><Space>H <C-w>H
+noremap <Leader><Space>L <C-w>L
 "resizing windows
-noremap <Leader>w_ <C-w>_
-noremap <Leader>w\| <C-w>\|
-noremap <Leader>w= <C-w>=
+noremap <Leader><Space>_ <C-w>_
+noremap <Leader><Space>\| <C-w>\|
+noremap <Leader><Space>= <C-w>=
 
 "working with buffers
 nnoremap <Leader># :b#<CR>
+nnoremap <Leader>B :b#<CR>
 nnoremap <Leader>b :Buffers<CR>
 
 "----------------------------------
@@ -264,14 +265,14 @@ nmap <leader>a  <Plug>(coc-codeaction-cursor)
 " Code actions for the entire buffer
 nmap <leader>A  <Plug>(coc-codeaction-source)
 " Show commands
-nnoremap <silent><nowait> <space>?  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <leader>?  :<C-u>CocList commands<cr>
 
 " Select outward to the parent node
 " (Requires 'textDocument/selectionRange' support of language server)
-nmap <silent> <m-o> <Plug>(coc-range-select)
+" nmap <silent> <m-o> <Plug>(coc-range-select)
 xmap <silent> <m-o> <Plug>(coc-range-select)
 " ...and this is the opposite
-nmap <silent> <m-i> <Plug>(coc-range-select-backward)
+" nmap <silent> <m-i> <Plug>(coc-range-select-backward)
 xmap <silent> <m-i> <Plug>(coc-range-select-backward)
 
 nnoremap <Leader>d :CocDiagnostics<CR>
@@ -367,7 +368,7 @@ EOF
 " Tree Climber
 lua <<EOF
 local keyopts = { noremap = true, silent = true }
-vim.keymap.set({'n', 'v', 'o'}, '<m-b>', require('tree-climber').goto_parent, keyopts)
+vim.keymap.set({'n'}, '<m-o>', require('tree-climber').goto_parent, keyopts)
 EOF
 
 source ~/.vim/vimrc.local
