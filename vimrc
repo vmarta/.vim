@@ -12,7 +12,7 @@ Plug 'heavenshell/vim-jsdoc', {
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', {'for': ['markdown', 'text']}
-Plug 'justinmk/vim-dirvish'
+" Plug 'justinmk/vim-dirvish'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'lambdalisue/fern.vim', {'on': 'Fern'}
 Plug 'mhinz/vim-grepper'
@@ -30,6 +30,8 @@ Plug 'tpope/vim-unimpaired'
 
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'drybalka/tree-climber.nvim'
+Plug 'echasnovski/mini.files'
+Plug 'echasnovski/mini.icons'
 
 call plug#end()
 
@@ -370,5 +372,15 @@ lua <<EOF
 local keyopts = { noremap = true, silent = true }
 vim.keymap.set({'n'}, '<m-o>', require('tree-climber').goto_parent, keyopts)
 EOF
+
+"----------------------------------
+" mini.nvim
+lua <<EOF
+require('mini.files').setup({mappings = {go_in_plus = '<CR>', close = '<Esc>'}})
+require('mini.icons').setup()
+EOF
+
+nnoremap - :lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>
+
 
 source ~/.vim/vimrc.local
