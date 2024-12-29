@@ -198,7 +198,7 @@ function! s:goyo_leave()
   set nowrap
   set nolinebreak
   set nolist
-  colorscheme github_light " so that footer is rendered properly
+  " colorscheme github_light " so that footer is rendered properly
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
@@ -208,6 +208,8 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 "Markdown related
 nnoremap <Leader>m :Goyo<cr>
 command! MarkedOpen execute '!open -a /Applications/Setapp/Marked.app ' . expand('%:p')
+highlight @markup.raw.block.markdown cterm=NONE gui=NONE  " no longer in italic
+
 
 "----------------------------------
 " COC intellisense engine
