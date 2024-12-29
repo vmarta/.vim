@@ -138,24 +138,24 @@ inoremap jk <Esc>
 
 "moving to another window
 noremap <Leader>w <C-w>w
-noremap <Leader><Space>j <C-w>j
-noremap <Leader><Space>k <C-w>k
-noremap <Leader><Space>h <C-w>h
-noremap <Leader><Space>l <C-w>l
+noremap <Leader>gj <C-w>j
+noremap <Leader>gk <C-w>k
+noremap <Leader>gh <C-w>h
+noremap <Leader>gl <C-w>l
 "adding/removing windows
-noremap <Leader><Leader>v <C-w>v<C-w>w
-noremap <Leader><Space>s <C-w>s<C-w>w
-noremap <Leader><Space>o <C-w>o
-noremap <Leader><Space>q <C-w>c
+noremap <Leader>gv <C-w>v<C-w>w
+noremap <Leader>gs <C-w>s<C-w>w
+noremap <Leader>go <C-w>o
+noremap <Leader>gq <C-w>c
 "swapping windows
-noremap <Leader><Space>J <C-w>J
-noremap <Leader><Space>K <C-w>K
-noremap <Leader><Space>H <C-w>H
-noremap <Leader><Space>L <C-w>L
+noremap <Leader>gJ <C-w>J
+noremap <Leader>gK <C-w>K
+noremap <Leader>gH <C-w>H
+noremap <Leader>gL <C-w>L
 "resizing windows
-noremap <Leader><Space>_ <C-w>_
-noremap <Leader><Space>\| <C-w>\|
-noremap <Leader><Space>= <C-w>=
+noremap <Leader>g_ <C-w>_
+noremap <Leader>g\| <C-w>\|
+noremap <Leader>g= <C-w>=
 
 "working with buffers
 nnoremap <Leader># :b#<CR>
