@@ -315,6 +315,7 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 "----------------------------------
 " Fern
 nnoremap <leader>e :Fern . -reveal=%<cr>
+nnoremap <leader>E :Fern . -drawer -reveal=%<cr>
 
 "----------------------------------
 " Grepper
