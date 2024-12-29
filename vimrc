@@ -120,13 +120,9 @@ set smartindent
 "When using p, adjust indent to the current line
 " nmap p ]p
 
-set laststatus=2  "status line always appears
-
-" For more info, see ':help statusline'
-set statusline=%m  "whether file has been modified
-set statusline+=%f  "shows file path
-set statusline+=\ \ %<%{flagship#surround(flagship#filetype())}%w
-" Flagship would set the remaining part of the statusline
+set laststatus=3  "global status line (and Flagship will set the statusline)
+set guicursor+=a:blinkon300  "blinking cursor helps with identifying the active window, especially now using global statusline
+set winbar=↓\ %f\ %m  "show the filename at the top of each window
 
 set showcmd      "show partial command that you're typing
 set wildmenu     "better command line completion
