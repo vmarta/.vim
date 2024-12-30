@@ -379,4 +379,4 @@ EOF
 nnoremap - :lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>
 
 
-source ~/.vim/vimrc.local
+source ~/.vim/local.vim
