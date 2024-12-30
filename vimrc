@@ -47,6 +47,13 @@ let mapleader = "\<Space>"
 
 set background=light
 set termguicolors
+
+" based on Goyo FAQ: https://github.com/junegunn/goyo.vim?tab=readme-ov-file#faq
+function! s:highlights()
+  source ~/.vim/highlights.vim
+endfunction
+autocmd! ColorScheme github_light call s:highlights()
+
 colorscheme github_light
 
 " set synmaxcol=500  "avoid hanging on very long lines
@@ -185,16 +192,17 @@ let g:tabprefix = ""  "no prefix
 "----------------------------------
 "Goyo
 function! s:goyo_enter()
+  set winbar=
   set wrap
   set linebreak
   set list
 endfunction
 
 function! s:goyo_leave()
+  set winbar=↓\ %f\ %m  "show the filename at the top of each window
   set nowrap
   set nolinebreak
   set nolist
-  " colorscheme github_light " so that footer is rendered properly
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
@@ -204,7 +212,6 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 "Markdown related
 nnoremap <Leader>m :Goyo<cr>
 command! MarkedOpen execute '!open -a /Applications/Setapp/Marked.app ' . expand('%:p')
-highlight @markup.raw.block.markdown cterm=NONE gui=NONE  " no longer in italic
 
 
 "----------------------------------
@@ -358,9 +365,6 @@ vim.keymap.set({'x', 'o'}, 'S', '<Plug>(leap-backward)')
 -- When Leap is active, grey out all the code
 vim.api.nvim_set_hl(0, 'LeapBackdrop', { link = 'Comment' })
 EOF
-
-" Labels with more contrast
-highlight LeapLabelPrimary gui=bold guifg=bg guibg=fg
 
 "----------------------------------
 " Tree Climber
