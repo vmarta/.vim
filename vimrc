@@ -19,6 +19,8 @@ Plug 'mhinz/vim-grepper'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " NOTE: this can run in both vim and neovim
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'projekt0n/github-nvim-theme'
+Plug 'nvim-treesitter/nvim-treesitter-context'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
@@ -148,7 +150,7 @@ noremap <Leader>gl <C-w>l
 "adding/removing windows
 noremap <Leader>gv <C-w>v<C-w>w
 noremap <Leader>gs <C-w>s<C-w>w
-noremap <Leader>go <C-w>o
+noremap <Leader>go <C-w>o:TSContext enable<CR>
 noremap <Leader>gq <C-w>c
 "swapping windows
 noremap <Leader>gJ <C-w>J
@@ -344,6 +346,11 @@ require'nvim-treesitter.configs'.setup {
     end,
     additional_vim_regex_highlighting = false
   }
+}
+
+require'treesitter-context'.setup{
+  max_lines = 2, -- How many lines the window should span. Values <= 0 mean no limit.
+  trim_scope = 'inner', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
 }
 EOF
 
