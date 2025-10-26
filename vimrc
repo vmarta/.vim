@@ -18,7 +18,6 @@ Plug 'lambdalisue/fern.vim', {'on': 'Fern'}
 Plug 'mhinz/vim-grepper'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " NOTE: this can run in both vim and neovim
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-Plug 'projekt0n/github-nvim-theme'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'tpope/vim-commentary'
@@ -34,6 +33,10 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'drybalka/tree-climber.nvim'
 Plug 'echasnovski/mini.files'
 Plug 'echasnovski/mini.icons'
+
+" Syntax highlighting
+Plug 'projekt0n/github-nvim-theme'
+Plug 'p00f/alabaster.nvim'
 
 call plug#end()
 
@@ -54,9 +57,10 @@ set termguicolors
 function! s:highlights()
   source ~/.vim/highlights.vim
 endfunction
-autocmd! ColorScheme github_light call s:highlights()
+autocmd! ColorScheme alabaster call s:highlights()
 
-colorscheme github_light
+" colorscheme github_light
+colorscheme alabaster
 
 " set synmaxcol=500  "avoid hanging on very long lines
 set sidescroll=0  "on navigating long unwrapped lines, this jumps the cursor to the middle of the window
