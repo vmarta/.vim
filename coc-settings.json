@@ -4,8 +4,10 @@
   "suggest.floatConfig": {"border": true},
   "hover.floatConfig": {"border": true},
   "diagnostic.floatConfig": {"border": true},
-  "eslint.autoFixOnSave": true,
   "[css][scss]": {"coc.preferences.formatOnSave": true},
   // Disable watchman because tsserver could crash when running a build
-  "coc.preferences.watchmanPath": ""
+  "fileSystemWatch.watchmanPath": "",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
