@@ -31,6 +31,9 @@ Plug 'tpope/vim-unimpaired'
 
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'drybalka/tree-climber.nvim'
+" Plug 'rafikdraoui/jj-diffconflicts'
+Plug 'whiteinge/diffconflicts'
+
 Plug 'echasnovski/mini.files'
 Plug 'echasnovski/mini.icons'
 
@@ -137,6 +140,9 @@ set laststatus=3  "global status line (and Flagship will set the statusline)
 set guicursor+=a:blinkon300  "blinking cursor helps with identifying the active window, especially now using global statusline
 set winbar=↓\ %f\ %m  "show the filename at the top of each window
 
+" whenever a Quickfix window opens, its winbar is automatically removed
+autocmd FileType qf setlocal winbar=
+
 set showcmd      "show partial command that you're typing
 set wildmenu     "better command line completion
 
@@ -213,6 +219,8 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+let g:goyo_height = '100%'
 
 "----------------------------------
 "Markdown related
@@ -324,11 +332,16 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 "----------------------------------
 " Fern
 nnoremap <leader>e :Fern . -reveal=%<cr>
-nnoremap <leader>E :Fern . -drawer -reveal=%<cr>
+nnoremap <leader>E :Fern . -drawer -width=40 -reveal=%<cr>
 
 "----------------------------------
 " Grepper
-runtime plugin/grepper.vim
+runtime plugin/grepper.vim    " initialize g:grepper with default values
+
+" Set my own height for the quickfix window
+let g:grepper.open = 0
+autocmd User Grepper copen 12
+
 " Pass in additional flags to the underlying ripgrep
 let g:grepper.rg.grepprg .= ' --smart-case --hidden --glob !.git'
 
@@ -395,3 +408,8 @@ nnoremap - :lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>
 
 
 source ~/.vim/local.vim
+
+"----------------------------------
+" Cursor editor
+command! CursorOpenFile execute '!cursor --goto ' . shellescape(expand('%')) . ':' . line('.')
+
